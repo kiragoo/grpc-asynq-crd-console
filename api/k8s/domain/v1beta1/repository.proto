@@ -1,0 +1,12 @@
+syntax  = "proto3";
+
+package domain;
+
+option go_package = "github.com/kiragoo/grpc-asynq-crd-console/api/k8s/domain/v1beta1;v1beta1";
+
+message Repository {
+    int64 id  = 1;
+    string name = 2;
+    int64 userId = 3;
+    bool isPrivate = 4;
+}

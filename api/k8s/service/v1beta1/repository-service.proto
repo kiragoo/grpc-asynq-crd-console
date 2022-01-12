@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/kiragoo/grpc-asynq-crd-console/api/k8s/service/v1beta1;v1beta1";
+
+import "api/k8s/domain/v1beta1/repository.proto";
+
+service RepositoryService {
+    rpc add (domain.Repository) returns (AddRepositoryResponse);
+}
+ 
+message AddRepositoryResponse {
+    domain.Repository addedRepository = 1;
+    Error error = 2;
+}
+message Error {
+    string code = 1;
+    string message = 2;
+}
